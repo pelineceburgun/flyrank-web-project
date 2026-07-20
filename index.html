@@ -2,101 +2,143 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pelin Ece Burgun | AI & Data</title>
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
         
         :root {
-            --bg-color: #f8f9fa;
-            --text-color: #212529;
-            --accent-color: #0d6efd;
-            --card-bg: #ffffff;
-            --border-color: #dee2e6;
+            --bg-color: #0f172a;       
+            --text-main: #e2e8f0;      
+            --text-muted: #94a3b8;     
+            --accent-start: #3b82f6;   
+            --accent-end: #8b5cf6;     
+            --card-bg: #1e293b;        
+            --card-border: #334155;   
         }
 
-        
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            color: var(--text-main);
+            line-height: 1.7;
         }
 
-        
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 4rem 2rem;
         }
 
         
         header {
-            margin-bottom: 3rem;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 1.5rem;
+            margin-bottom: 4rem;
         }
 
         header h1 {
+            font-size: 3rem;
             margin: 0 0 0.5rem 0;
-            font-size: 2.5rem;
+            font-weight: 700;
+            
+            background: linear-gradient(to right, var(--accent-start), var(--accent-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
 
         header p {
-            font-size: 1.2rem;
-            color: #6c757d;
+            font-size: 1.25rem;
+            color: var(--text-muted);
             margin-top: 0;
+            font-weight: 300;
+        }
+
+        
+        .social-links {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1.5rem;
         }
 
         .social-links a {
-            margin-right: 1rem;
-            color: var(--accent-color);
+            color: var(--text-main);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease; 
         }
         
         .social-links a:hover {
-            text-decoration: underline;
+            color: var(--accent-start);
+        }
+
+        
+        h2 {
+            font-size: 1.75rem;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: #ffffff;
         }
 
         
         .projects-grid {
             display: grid;
-            gap: 1.5rem;
-            /* Mobilde 1 sütun, geniş ekranda otomatik sığdırma yapar */
+            gap: 2rem;
             grid-template-columns: 1fr; 
         }
 
         .card {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem;
+            
+            transition: all 0.3s ease; 
+        }
+
+        
+        .card:hover {
+            transform: translateY(-5px); 
+            border-color: var(--accent-start); 
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3); 
         }
 
         .card h3 {
-            margin-top: 0;
-            color: var(--accent-color);
+            margin: 0 0 1rem 0;
+            font-size: 1.4rem;
+            color: #ffffff;
         }
 
+        .card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        
         .tags {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
-            margin-top: 1rem;
         }
 
         .tag {
-            background-color: #e9ecef;
-            color: #495057;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
+            background-color: rgba(59, 130, 246, 0.1); 
+            color: var(--accent-start);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px; 
+            font-family: 'Fira Code', monospace; 
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -104,28 +146,28 @@
 
     <div class="container">
         
+        <!-- HEADER -->
         <header>
             <h1>Pelin Ece Burgun</h1>
             <p>Computer Science & Engineering @ Acıbadem University</p>
             <div class="social-links">
-                
                 <a href="#" target="_blank">LinkedIn</a>
                 <a href="#" target="_blank">GitHub</a>
                 <a href="#" target="_blank">Medium</a>
             </div>
         </header>
 
-        
-        <section style="margin-bottom: 3rem;">
+        <!-- ABOUT -->
+        <section style="margin-bottom: 4rem;">
             <h2>About</h2>
             <p>
-                I focus on computational neuroscience, explainable artificial intelligence (XAI), and mechanistic interpretability. 
+                I focus on NLP, explainable artificial intelligence (XAI), and mechanistic interpretability. 
                 Rather than solely deploying existing models, I am deeply interested in analyzing the logical foundations of architectures, deconstructing the paradigm shifts behind Transformers and U-Nets. 
             </p>
         </section>
 
-        
-        <section style="margin-bottom: 3rem;">
+        <!-- PROJECTS -->
+        <section style="margin-bottom: 4rem;">
             <h2>Selected Projects & Research</h2>
             <div class="projects-grid">
                 
@@ -161,15 +203,17 @@
             </div>
         </section>
 
-        
+        <!-- ARTICLES -->
         <section>
             <h2>Writing</h2>
-            <div class="card">
-                <h3>Step-by-Step Exploratory Data Analysis (EDA) Series</h3>
-                <p>A comprehensive technical series published on Medium breaking down statistical concepts and practical EDA implementations for data science pipelines.</p>
-                <div class="tags">
-                    <span class="tag">Data Analysis</span>
-                    <span class="tag">Technical Writing</span>
+            <div class="projects-grid">
+                <div class="card">
+                    <h3>Step-by-Step Exploratory Data Analysis (EDA) Series</h3>
+                    <p>A comprehensive technical series published on Medium breaking down statistical concepts and practical EDA implementations for data science pipelines.</p>
+                    <div class="tags">
+                        <span class="tag">Data Analysis</span>
+                        <span class="tag">Technical Writing</span>
+                    </div>
                 </div>
             </div>
         </section>
